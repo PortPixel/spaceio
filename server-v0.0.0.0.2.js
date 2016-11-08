@@ -340,20 +340,26 @@ function updateGameArea() {
 				
 				
 				if (controls == 3) {
+					var moveX = 0;
+					var moveY = 0;
 					if (cellmovement.Vert == 1) { //w
-						//cellyv += 1 + 5 / Math.sqrt(cellsize) + cellupgrades.moveSpeed/3;
-						cellv += 0.2+(cellupgrades.moveSpeed/30)
+						cellyv += 1 + 5 / Math.sqrt(cellsize) + cellupgrades.moveSpeed/3;
+						moveX += 1;
+						//cellv += 0.2+(cellupgrades.moveSpeed/30)
 					}
 					if (cellmovement.Vert == -1) { //s
 						cellyv -= 1 + 5 / Math.sqrt(cellsize) + cellupgrades.moveSpeed/3;
+						moveX -= 1;
 					}
 					if (cellmovement.Hoz == 1) { //a
 						//celldir -= 5;
 						cellxv += 1 + 5 / Math.sqrt(cellsize) + cellupgrades.moveSpeed/3;
+						moveY += 1;
 					}
 					if (cellmovement.Hoz == -1) { //d
 						//celldir += 5;
 						cellxv -= 1 + 5 / Math.sqrt(cellsize) + cellupgrades.moveSpeed/3;
+						moveY -= 1;
 					}
 				}
 				
@@ -376,6 +382,29 @@ function updateGameArea() {
 							cellgundir += -20;
 						} else {
 							cellgundir = (0.7 * cellgundir) + (0.3 * targetdir);
+						}
+					}
+				}
+				/* end of spin towards script */
+				
+				var targetdir = getDirection(moveX, moveY) % 360;
+				/* spin towards direction script */
+				if (celldir == targetdir) {
+				} else {
+					if ((targetdir - celldir) > 180) {
+						targetdir += -360;
+					} else {
+						if ((targetdir - celldir) < -180) {
+							targetdir += 360;
+						}
+					}
+					if (targetdir > celldir + 20) {
+						celldir += 20;
+					} else {
+						if (targetdir < celldir - 20) {
+							celldir += -20;
+						} else {
+							celldir = (0.7 * celldir) + (0.3 * targetdir);
 						}
 					}
 				}
