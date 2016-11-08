@@ -345,15 +345,15 @@ function updateGameArea() {
 						cellv += 0.2+(cellupgrades.moveSpeed/30)
 					}
 					if (cellmovement.Vert == -1) { //s
-						//cellyv -= 1 + 5 / Math.sqrt(cellsize) + cellupgrades.moveSpeed/3;
+						cellyv -= 1 + 5 / Math.sqrt(cellsize) + cellupgrades.moveSpeed/3;
 					}
 					if (cellmovement.Hoz == 1) { //a
-						celldir -= 5;
-						//cellxv += 1 + 5 / Math.sqrt(cellsize) + cellupgrades.moveSpeed/3;
+						//celldir -= 5;
+						cellxv += 1 + 5 / Math.sqrt(cellsize) + cellupgrades.moveSpeed/3;
 					}
 					if (cellmovement.Hoz == -1) { //d
-						celldir += 5;
-						//cellxv -= 1 + 5 / Math.sqrt(cellsize) + cellupgrades.moveSpeed/3;
+						//celldir += 5;
+						cellxv -= 1 + 5 / Math.sqrt(cellsize) + cellupgrades.moveSpeed/3;
 					}
 				}
 				
