@@ -344,22 +344,22 @@ function updateGameArea() {
 					var moveY = 0;
 					if (cellmovement.Vert == 1) { //w
 						cellyv += 1 + 5 / Math.sqrt(cellsize) + cellupgrades.moveSpeed/3;
-						moveX += 1;
+						moveY += 1;
 						//cellv += 0.2+(cellupgrades.moveSpeed/30)
 					}
 					if (cellmovement.Vert == -1) { //s
 						cellyv -= 1 + 5 / Math.sqrt(cellsize) + cellupgrades.moveSpeed/3;
-						moveX -= 1;
+						moveY -= 1;
 					}
 					if (cellmovement.Hoz == 1) { //a
 						//celldir -= 5;
 						cellxv += 1 + 5 / Math.sqrt(cellsize) + cellupgrades.moveSpeed/3;
-						moveY += 1;
+						moveX += 1;
 					}
 					if (cellmovement.Hoz == -1) { //d
 						//celldir += 5;
 						cellxv -= 1 + 5 / Math.sqrt(cellsize) + cellupgrades.moveSpeed/3;
-						moveY -= 1;
+						moveX -= 1;
 					}
 				}
 				
