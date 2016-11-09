@@ -454,6 +454,8 @@ function updateGameArea() {
 					if (getDistance(cellx - collects[i3] , celly - collects[i3 + 1]) < (cellsize/2 + collects[i3 + 2])*2)  {
 				
 						if (celltype != "minion-collector") {
+							
+						} else {
 							cellsize = Math.sqrt((Math.pow(cellsize, 2)) + Math.pow(collects[i3 + 2] , 2)/10);
 						}
 						playerScore += collects[i3+2];
