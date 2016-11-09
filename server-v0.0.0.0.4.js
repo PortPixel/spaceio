@@ -333,7 +333,7 @@ function updateGameArea() {
 							}
 						}
 					}*/
-					if (getDistance(users[playerIds[i]].cells[0].x - cellx, users[playerIds[i]].cells[0].y - celly) > 2000) {
+					if (getDistance(users[playerIds[i]].cells[0].x - cellx, users[playerIds[i]].cells[0].y - celly) > 200000) {
 						if (cellx < users[playerIds[i]].cells[0].x) {
 							cellmovement.Hoz = 1;
 						} else {
