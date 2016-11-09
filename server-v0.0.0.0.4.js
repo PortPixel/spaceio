@@ -832,7 +832,7 @@ io.on('connection', function(socket){
 		} else {
 			if (data == 'minion-collector') {
 				if (users[socket.id].upgrades.hasMinion == false) {
-					users[socket.id].upgrades.hasMinion = true;
+					//users[socket.id].upgrades.hasMinion = true;
 					spawnCell(socket.id, users[socket.id].cells[0].x +  100-Math.random()*200, users[socket.id].cells[0].y +  100-Math.random()*200, 0,30,'minion-collector',0,0,100);
 				}
 			}
