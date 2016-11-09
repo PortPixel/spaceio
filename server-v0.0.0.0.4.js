@@ -333,15 +333,28 @@ function updateGameArea() {
 							}
 						}
 					}*/
-					if (cellx < collects[nearestColIndex]) {
-						cellmovement.Hoz = 1;
+					if (getDistance(users[playerIds[i]].cells[0].x - cellx, users[playerIds[i]].cells[0].y - celly) > 2000) {
+						if (cellx < users[playerIds[i]].cells[0].x) {
+							cellmovement.Hoz = 1;
+						} else {
+							cellmovement.Hoz = -1;
+						}
+						if (celly < users[playerIds[i]].cells[0].y) {
+							cellmovement.Vert = 1;
+						} else {
+							cellmovement.Vert = -1;
+						}
 					} else {
-						cellmovement.Hoz = -1;
-					}
-					if (celly < collects[nearestColIndex+1]) {
-						cellmovement.Vert = 1;
-					} else {
-						cellmovement.Vert = -1;
+						if (cellx < collects[nearestColIndex]) {
+							cellmovement.Hoz = 1;
+						} else {
+							cellmovement.Hoz = -1;
+						}
+						if (celly < collects[nearestColIndex+1]) {
+							cellmovement.Vert = 1;
+						} else {
+							cellmovement.Vert = -1;
+						}
 					}
 				}
 				
