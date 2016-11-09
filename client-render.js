@@ -534,7 +534,7 @@ function updateGameArea() {
 						image.src = "images/shipv2-blue.svg" ;
 					}
 					drawRotatedImage(image,(camerax - cellx) * zoom,(cameray - celly) * zoom, cellsize*4*zoom, cellsize*4*zoom, celldir);
-					drawRotatedRect((camerax - cellx) * zoom,(cameray - celly) * zoom,cellsize*zoom/2,cellsize*1.5*zoom,cellgundir,'white')
+					//drawRotatedRect((camerax - cellx) * zoom,(cameray - celly) * zoom,cellsize*zoom/2,cellsize*1.5*zoom,cellgundir,'white')
 					
 				}
 				if (celltype == "minion-collector") {
@@ -713,7 +713,7 @@ function updateGameArea() {
 				cellv = cellv * 0.9;
 				cellxv = cellxv * 0.95 + cellv * (Math.sin(toRadians(celldir))) * -1;
 				cellyv = cellyv * 0.95 + cellv * (Math.cos(toRadians(celldir)));
-				createParticle(cellx,celly,Math.sin(toRadians(celldir)) * (cellv+10) ,Math.cos(toRadians(celldir)) * (cellv-10), Math.random() * 35 ,Math.round(3 + Math.random() * 6));
+				createParticle(cellx,celly,Math.sin(toRadians(celldir)) * (cellv+10) ,Math.cos(toRadians(celldir)) * (cellv-10), cellsize * Math.random() * 0.6 ,Math.round(3 + Math.random() * 6));
 		
 				var i3;
 				var collength = collects.length;
